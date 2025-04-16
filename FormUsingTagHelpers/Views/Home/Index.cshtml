@@ -11,14 +11,15 @@
             <h1 class="display-4 bg-primary text-white fw-bold">Welcome To The Clinic</h1>
             <div class="col-sm-4">
                 <form class="d-grid text-start" asp-action="Index" asp-controller="Home" method="post">
-                    <label asp-for="Name" >Enter name:</label>
+                    <div asp-validation-summary="All" style="color:red"></div>
+                    <label asp-for="ID" >Enter ID:</label>
                     
                     <input asp-for="ID" placeholder="Enter Id" class="form-control"/>
-                    <span asp-validation-for="ID" class="text-danger"></span>
+                    @* <span asp-validation-for="ID" class="text-danger"></span> *@
                     <br />
                     <label asp-for="Name" class="ml-0">Enter name:</label>
                     <input asp-for="Name" placeholder="Enter Name" class="form-control" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
+                    @* <span asp-validation-for="Name" class="text-danger"></span> *@
                     <br />
                     <select asp-for="Gender" class="form-control" asp-items="Html.GetEnumSelectList<Gender>()">
                         <option value="value">Select Gender</option>
@@ -43,8 +44,14 @@
                             No
                         </label>
                     </div>
+                    <br />
                     <input asp-for="Email" class="form-control" placeholder="Enter mail" />
-                    <span asp-validation-for="Email"></span>
+                    @* <span asp-validation-for="Email"></span> *@
+                    <br />
+                    <label asp-for="ConfirmEmail"></label>
+                    <input asp-for="ConfirmEmail" class="form-control" placeholder="Enter Confirm Email" />
+                    @* <span asp-validation-for="ConfirmEmail"></span> *@
+                    <br />
                     <button type="submit" class="btn btn-outline-primary btm-block" >Submit</button>
                 </form>
 

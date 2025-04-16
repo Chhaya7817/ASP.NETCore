@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace FormUsingTagHelpers.Models
 {
@@ -17,6 +18,9 @@ namespace FormUsingTagHelpers.Models
         //[EmailAddress]
         [RegularExpression("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",ErrorMessage ="Invalid Email")]
         public string Email { get; set; }
+        [Compare("Email")]
+        [DisplayName("CCheck Email: ")]
+        public string ConfirmEmail { get; set; }
     }
     public enum Gender
     {
